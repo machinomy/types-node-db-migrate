@@ -9,118 +9,118 @@ declare module 'node-db-migrate' {
      *
      * @return boolean
      */
-    addGlobal: Function
+    addGlobal (library: string): boolean
 
     /**
      * Registers and initializes hooks.
      *
      * @returns Promise
      */
-    registerAPIHook: Function
+    registerAPIHook (callback?: Function): Promise<any>
 
     /**
      * Add a configuration option to dbmigrate.
      *
      * @return boolean
      */
-    addConfiguration: Function
+    addConfiguration (description: string, args: any[], type: string): boolean
 
     /**
      * Resets and sets argv to a specified new argv.
      */
-    resetConfiguration: Function
+    resetConfiguration (argv: any[]): void
 
     /**
      * Executes up a given number of migrations or a specific one.
      *
      * Defaults to up all migrations if no count is given.
      */
-    up: Function
+    up (specification?: string | number | Function, opts?: string | Function, callback?: Function): Promise<any>
 
     /**
      * Executes up a given number of migrations or a specific one.
      *
      * Defaults to up all migrations if no count is given.
      */
-    down: Function
+    down (specification?: number | Function, opts?: string | Function, callback?: Function): Promise<any>
 
-    check: Function
+    check (specification?: number | Function, opts?: string | Function, callback?: Function): Promise<any>
 
     /**
      * Executes up a given number of migrations or a specific one.
      *
      * Defaults to up all migrations if no count is given.
      */
-    sync: Function
+    sync (specification?: string, opts?: string | Function, callback?: Function): Promise<any>
 
     /**
      * Executes down for all currently migrated migrations.
      */
-    reset: Function
+    reset (scope?: string | Function, callback?: Function): Promise<any>
 
     /**
      * Silence the log output completely.
      */
-    silence: Function
+    silence (isSilent: boolean): void
 
     /**
      * Transition migrations to the latest defined protocol.
      */
-    transition: Function
+    transition (): void
 
     /**
      * Creates a correctly formatted migration
      */
-    create: Function
+    create (migrationName: string, scope?: string | Function, callback?: Function): Promise<any>
 
     /**
      * Creates a database of the given dbname.
      */
-    createDatabase: Function
+    createDatabase (dbname: string, callback?: Function): Promise<any>
 
     /**
      * Drops a database of the given dbname.
      */
-    dropDatabase: Function
+    dropDatabase (dbname: string, callback?: Function): Promise<any>
 
     /**
      * Sets a config variable to the given value.
      *
      * @return value
      */
-    setConfigParam: Function
+    setConfigParam (param: string, value: any): any
 
     /**
      * Sets the callback to the default onComplete
      */
-    setDefaultCallback: Function
+    setDefaultCallback (): void
 
     /**
      * Let's the user customize the callback, which gets called after all
      * migrations have been done.
      */
-    setCustomCallback: Function
+    setCustomCallback (callback: Function): void
 
     /**
      * Seeds either the static or version controlled seeders, controlled by
      * the passed mode.
      */
-    seed: Function
+    seed (mode?: string, scope?: string, callback?: Function): Promise<any>
 
     /**
      * Execute the down function of currently executed seeds.
      */
-    undoSeed: Function
+    undoSeed (specification?: number | string, scope?: string, callback?: Function): Promise<any>
 
     /**
      * Execute the reset function of currently executed seeds.
      */
-    resetSeed: Function
+    resetSeed (specification?: number | string, scope?: string, callback?: Function): Promise<any>
 
     /**
      * Executes the default routine.
      */
-    run: Function
+    run (): void
   }
 
   export = DBMigrate
