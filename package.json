@@ -1,0 +1,16 @@
+{
+  "name": "@machinomy/types-node-db-migrate",
+  "version": "0.0.1",
+  "description": "TypeScript declaration for node-db-migrate",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/machinomy/types-node-db-migrate.git"
+  },
+  "author": "Machinomy Team <machinomy.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/machinomy/types-node-db-migrate/issues"
+  },
+  "homepage": "https://github.com/machinomy/types-node-db-migrate#readme"
+}
