@@ -1,8 +1,4 @@
 declare module 'db-migrate' {
-  namespace DBMigrate {
-    function getInstance (isModule?: boolean, options?: Object | Function, callback?: Function): DBMigrate
-  }
-
   class DBMigrate {
     /**
      * Add a global defined variable to db-migrate, to enable access from
@@ -124,5 +120,19 @@ declare module 'db-migrate' {
     run (): void
   }
 
-  export = DBMigrate
+  namespace DBMigrateNS {
+    function getInstance (isModule?: boolean, options?: string | Object, callback?: Function): DBMigrate
+
+    interface DBMigrateInstanceOptions {
+      cwd?: string
+      config?: string | Object
+      cmdOptions?: Object
+      env?: string
+      throwUncatched?: boolean
+      noPlugins?: boolean
+      database?: string
+    }
+  }
+
+  export = DBMigrateNS
 }
