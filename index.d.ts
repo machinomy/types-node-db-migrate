@@ -1,5 +1,6 @@
 declare module 'db-migrate' {
   namespace DBMigrate {
+    function getInstance (isModule?: boolean, options?: Object | Function, callback?: Function): DBMigrate
   }
 
   class DBMigrate {
