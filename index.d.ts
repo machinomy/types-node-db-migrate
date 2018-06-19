@@ -1,4 +1,4 @@
-declare module 'node-db-migrate' {
+declare module 'db-migrate' {
   namespace DBMigrate {
   }
 
