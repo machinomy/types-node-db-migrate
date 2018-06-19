@@ -121,16 +121,33 @@ declare module 'db-migrate' {
   }
 
   namespace DBMigrateNS {
-    function getInstance (isModule?: boolean, options?: string | Object, callback?: Function): DBMigrate
+    function getInstance (isModule?: boolean, options?: InstanceOptions, callback?: Function): DBMigrate
 
-    interface DBMigrateInstanceOptions {
+    interface InstanceOptions {
       cwd?: string
-      config?: string | Object
+      config?: string | ConfigPerSource
       cmdOptions?: Object
       env?: string
       throwUncatched?: boolean
       noPlugins?: boolean
       database?: string
+      multipleStatements?: boolean
+    }
+
+    interface ConfigPerSource {
+      [_: string]: ConfigPerSourceOptions | string
+    }
+
+    type UsingENV = { 'ENV': string }
+
+    interface ConfigPerSourceOptions {
+      driver: string | UsingENV
+      user?: string | UsingENV
+      password?: string | UsingENV
+      host?: string | UsingENV
+      database?: string | UsingENV
+      filename?: string | UsingENV
+      schema?: string | UsingENV
     }
   }
 
