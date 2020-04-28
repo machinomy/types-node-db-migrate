@@ -145,6 +145,7 @@ declare module 'db-migrate' {
       user?: string | UsingENV
       password?: string | UsingENV
       host?: string | UsingENV
+      port?: number | UsingENV
       database?: string | UsingENV
       filename?: string | UsingENV
       schema?: string | UsingENV
