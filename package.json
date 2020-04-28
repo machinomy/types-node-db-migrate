@@ -1,6 +1,6 @@
 {
   "name": "@machinomy/types-node-db-migrate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TypeScript declaration for node-db-migrate",
   "types": "index.d.ts",
   "repository": {
